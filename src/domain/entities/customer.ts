@@ -1,7 +1,7 @@
-import { Entity } from "../../../core/domain/Entity";
+import { Entity } from "./../../core/domain/Entity";
 
 type CustomerProps = {
-  name: number;
+  name: string;
   address: string;
   email: string;
   phone: string;
@@ -13,7 +13,11 @@ export class Customer extends Entity<CustomerProps> {
     super(props, id);
   }
 
-  public static create(props: CustomerProps, id?: string) {
+  get id() {
+    return this._id;
+  }
+
+  static create(props: CustomerProps, id?: string) {
     const customer = new Customer(props, id);
 
     return customer;

@@ -1,4 +1,4 @@
-import { Entity } from "../../../core/domain/Entity";
+import { Entity } from "./../../core/domain/Entity";
 
 type AccountProps = {
   accountType: string;
@@ -11,7 +11,7 @@ export class Account extends Entity<AccountProps> {
     super(props, id);
   }
 
-  public static create(props: AccountProps, id?: string) {
+  static create(props: AccountProps, id?: string) {
     const account = new Account(props, id);
 
     return account;

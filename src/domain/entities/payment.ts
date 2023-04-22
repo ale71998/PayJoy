@@ -1,4 +1,4 @@
-import { Entity } from "../../../core/domain/Entity";
+import { Entity } from "./../../core/domain/Entity";
 
 type PaymentProps = {
   paymentAmount: number;
@@ -11,7 +11,11 @@ export class Payment extends Entity<PaymentProps> {
     super(props, id);
   }
 
-  public static create(props: PaymentProps, id?: string) {
+  get id() {
+    return this._id;
+  }
+
+  static create(props: PaymentProps, id?: string) {
     const payment = new Payment(props, id);
 
     return payment;

@@ -1,4 +1,4 @@
-import { Entity } from "../../../core/domain/Entity";
+import { Entity } from "./../../core/domain/Entity";
 
 type VerificationProps = {
   verifiedType: string;
@@ -11,7 +11,7 @@ export class Verification extends Entity<VerificationProps> {
     super(props, id);
   }
 
-  public static create(props: VerificationProps, id?: string) {
+  static create(props: VerificationProps, id?: string) {
     const verification = new Verification(props, id);
 
     return verification;
